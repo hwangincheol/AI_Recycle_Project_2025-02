@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layout}"
+      layout:fragment="content">
+<div class="index_whole">
+    <p class="bold_title">공지사항 작성</p>
+</div>
+<div>
+    <form th:action="@{/admin/board/write}" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <div class="board_row">
+            <label for="title" class="form-label">제목</label>
+            <input type="text" id="title" name="title" class="form-control" placeholder="제목 입력">
+            <div id="titleError" class="text-danger" style="display:none;">제목을 입력하세요.</div>
+        </div>
+        <div class="board_row">
+            <label for="content" class="form-label">내용</label>
+            <textarea id="content" name="content" rows="10" class="form-control" placeholder="내용 입력" contenteditable="true"></textarea>
+            <div id="contentError" class="text-danger" style="display:none;">내용을 입력하세요.</div>
+        </div>
+        <div class="board_row" id="previewInner">
+            <input type="file" name="file" accept="image/*" onchange="previewImage(this, event)"/>
+            <input type="hidden" id="writer" name="writer" th:value="${#authentication.name}" class="form-control" required readonly>
+            <img id="imagePreview" src="#" alt="이미지 미리보기" style="display: none;" />
+        </div>
+        <div class="btn_flex">
+            <button type="button" class="btn_prev" onclick="goBack()">뒤로</button>
+            <button type="submit" class="btn_submit">작성완료</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function previewImage(object, event) {
+      let extension = object.files[0].name.split('.').pop().toLowerCase();//파일 확장자
+        var reader = new FileReader();
+        reader.onload = function() {
+            $('#preview_txt').html('');
+          if(extension == 'jpg'
+          || extension == 'jpeg'
+          || extension == 'png'
+          || extension == 'svg'
+          || extension == 'tiff'
+          || extension == 'jfif'
+          ){
+            var imagePreview = document.getElementById('imagePreview');
+            imagePreview.src = reader.result;
+            imagePreview.style.display = 'block';
+            $('#preview_txt').hide();
+          }
+          else{
+            $('#imagePreview').hide();
+            preview_txt = '';
+            preview_txt += '<p id="preview_txt">' + object.files[0].name + '</p>';
+            $('#previewInner').append(preview_txt);
+          }
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
+    function validateForm() {
+        let title = document.getElementById("title").value.trim();
+        let content = document.getElementById("content").value.trim();
+        let isValid = true;
+
+        // 제목 검사
+        if (title === "") {
+            document.getElementById("titleError").style.display = "block";
+            isValid = false;
+        } else {
+            document.getElementById("titleError").style.display = "none";
+        }
+
+        // 내용 검사
+        if (content === "") {
+            document.getElementById("contentError").style.display = "block";
+            isValid = false;
+        } else {
+            document.getElementById("contentError").style.display = "none";
+        }
+
+        return isValid;
+    }
+</script>
+</html>

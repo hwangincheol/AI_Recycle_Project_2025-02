@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layout}"
+      layout:fragment="content">
+    <div class="price_whole">
+        <div class="price_title">
+            <h1>수거 신청 비용</h1>
+            <p>
+                수거 신청 비용이 얼마인지 궁금하신가요?
+                <br/>
+                아래 표를 참고하여 수거 신청해주세요.
+            </p>
+            <a href="/collect">수거 신청</a>
+        </div>
+        <table class="price_table">
+            <col style="width:100%"/>
+            <col style="width:15%;max-width:100px;"/>
+            <col style="width:15%;max-width:100px;"/>
+            <thead>
+                <tr>
+                    <th colspan="3">가격표</th>
+                </tr>
+                <tr>
+                    <th>종류</th>
+                    <th>가격(원)</th>
+                    <th>인건비(원)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item, iterStat : ${items}">
+                    <td th:text="${item.itemNameKor}"></td>
+                    <td th:text="${#numbers.formatInteger(item.price, 3, 'COMMA')}"></td>
+                    <td th:if="${iterStat.first}" th:rowspan="${#lists.size(items)}">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</html>

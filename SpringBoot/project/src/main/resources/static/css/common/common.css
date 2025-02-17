@@ -1,0 +1,196 @@
+@charset "UTF-8";
+.display_block{
+    display: block;
+}
+.display_flex{
+    display: flex;
+}
+.flex_wrap{
+    flex-wrap: wrap;
+}
+.flex_start{
+    justify-content: flex-start;
+}
+.flex_center{
+    justify-content: center;
+}
+.flex_between{
+    justify-content: space-between;
+}
+.flex_end{
+    justify-content: flex-end;
+}
+.flex_align_s{
+    align-items: start;
+}
+.flex_align_c{
+    align-items: center;
+}
+.flex_align_e{
+    align-items: end;
+}
+.flex_align_str{
+    align-items: stretch;
+}
+/*전체 페이지 공통*/
+.main_whole{
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    padding: 50px 0 60px 0;
+}
+.main_inner{
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    height: auto;
+    margin: 30px auto 50px auto;
+}
+.main_whole h1{
+    font-size: 20px;
+    line-height: 29px;
+    font-weight: bold;
+    font-family: 'Tenada';
+}
+.main_whole h2{
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+/*테이블 공통*/
+.main_inner table{
+    table-layout: fixed;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-spacing: 0;
+}
+.main_inner table thead th{
+    height: 40px;
+    color: rgb(var(--real-black));
+    background-color: rgb(var(--lite-gray));
+    text-align: center;
+}
+.main_inner table thead tr:nth-child(2) th{
+    background-color: rgba(var(--lite-gray),0.5);
+}
+.main_inner table td{
+    height: 40px;
+    color: rgb(var(--deep2-yellow));
+    text-align: center;
+    border-bottom: 1px solid rgb(var(--lite-gray));
+}
+.main_inner table th.table_num,
+.main_inner table td.table_num{
+    min-width: 50px;
+    width: 50px;
+    max-width: 50px;
+}
+.main_inner table th.table_etc,
+.main_inner table td.table_etc{
+    min-width: 80px;
+    width: 80px;
+    max-width: 80px;
+}
+.main_inner table td.table_etc a{
+    color: rgb(var(--origin-yellow));
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgb(var(--origin-yellow));
+}
+.main_inner table td.table_etc a + a{
+    color: rgb(var(--origin-red));
+    border-color: rgb(var(--origin-red));
+    margin-left: 10px;
+}
+.main_inner table td.table_etc a:hover{
+    font-weight: bold;
+}
+.btn_flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 0 auto;
+}
+.btn_flex button{
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    height: 40px;
+    border: 1px solid var(--bg-none);
+    border-radius: 5px;
+    background-color: rgb(var(--all-white));
+}
+.btn_flex button + button{
+    margin-left: 10px;
+}
+.btn_flex button.btn_prev{
+    color: rgb(var(--deep-yellow));
+    border-color: rgb(var(--origin-yellow));
+}
+.btn_flex button.btn_prev:hover{
+    background-color: rgba(var(--lite-yellow),0.1);
+}
+.btn_flex button.btn_submit{
+    color: rgb(var(--real-white));
+    background-color: rgb(var(--origin-yellow));
+}
+.btn_flex button.btn_submit:hover{
+    background-color: rgb(217,177,68);
+}
+.btn_flex button:hover{
+    font-weight: bold;
+}
+/*데이터 없을 때*/
+.no_data_txt{
+    width: 100%;
+    font-size: 16px!important;
+    font-weight: 500!important;
+    color: rgba(var(--lite-black),0.7)!important;
+    text-align: center!important;
+    padding: 50px 0!important;
+}
+/*페이징*/
+.pagination{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 0 auto;
+}
+.pagination div + div{
+    margin-left: 10px;
+}
+.pagination p,
+.pagination a{
+    display: block;
+    min-width: 14px;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 300;
+    color: rgb(var(--lite-black));
+    text-align: center;
+    text-decoration: none;
+}
+.pagination a:hover{
+    text-decoration: underline;
+}
+.pagination p{
+    font-weight: bold;
+    color: rgb(var(--deep-yellow));
+}
+.pagination a:hover{
+    text-decoration: underline;
+}
+.pagination p.active,
+.pagination a.active{
+    font-weight: bold;
+    color: rgb(var(--deep2-yellow));
+}
+@media (min-width: 1024px){
+    .w_display_flex{
+        display: flex;
+    }
+    .main_whole{
+        padding: 50px 0;
+    }
+}

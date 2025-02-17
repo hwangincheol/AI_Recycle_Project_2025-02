@@ -1,0 +1,233 @@
+@charset "UTF-8";
+/*멤버 카테고리 공통*/
+.member_whole{
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+}
+.member_whole *{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgb(var(--lite-black));
+    font-style: normal;
+    text-decoration: none;
+    word-break: auto-phrase;
+    background-color: var(--bg-none);
+}
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"]{
+    width: 100%;
+    height: auto;
+    line-height: 30px;
+    padding: 4px 10px;
+    border: 1px solid rgb(var(--lite-gray));
+    border-radius: 5px;
+    background: rgb(var(--real-white))!important;
+    background-color: rgb(var(--real-white))!important;
+    caret-color: rgb(215,172,52);
+    outline: none;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus{
+    outline: 1px solid rgb(var(--origin-yellow));
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    box-shadow: 0 0 0px 1000px #fff inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    box-shadow: 0 0 0px 1000px #fff inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="number"]:hover,
+input[type="date"]:hover{
+    border-color: rgb(var(--origin-yellow));
+    box-shadow: 0 0 10px rgba(var(--real-black),0.05);
+}
+input:read-only:hover{
+    border-color: rgb(var(--lite-gray));
+    box-shadow: none;
+}
+input{
+	cursor: text!important;
+}
+input:focus{
+    border-color: rgb(var(--origin-yellow));
+}
+input:read-only{
+    opacity: 0.7;
+    background-color: rgba(var(--lite-yellow), 0.1)!important;
+    cursor: default;
+}
+input:read-only:focus{
+    border-color: rgb(var(--lite-gray));
+}
+.btn_flex{
+    margin-top: 50px;
+}
+/*제목*/
+.member_title{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.member_title *{
+    text-align: center;
+}
+.member_title p{
+    margin-top: 10px;
+}
+/*내용시작*/
+.member_inner{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.member_row{
+    width: 100%;
+    height: auto;
+    margin: 30px auto 0 auto;
+}
+.member_row p{
+    margin: 0 auto 5px auto;
+}
+.member_row span{
+    display: none;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(var(--origin-red));
+    margin-top: 5px;
+}
+.member_row span span{
+    display: flex;
+}
+.member_row span#id_ok,
+.member_row span#id_ok *{
+    color: rgb(34,172,74);
+}
+.member_row span img{
+    min-width: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+.member_row div{
+    width: 100%;
+    height: auto;
+}
+/*비밀번호*/
+.pw_change_btn{
+    display: inline-block;
+    min-width: 150px;
+    width: 150px;
+    height: 40px;
+    background-color: rgb(var(--lite-yellow));
+    border-radius: 5px;
+    margin-top: 30px;
+}
+.pw_change_btn:hover{
+    background-color: rgb(var(--origin-yellow));
+}
+.common_pw{
+    display: none;
+    margin-top: 30px;
+}
+.member_row div.member_pw{
+    position: relative;
+    width: 100%;
+    height: auto;
+    line-height: 30px;
+    padding: 4px 10px;
+    border: 1px solid rgb(var(--lite-gray));
+    border-radius: 5px;
+    background-color: rgb(var(--real-white));
+}
+.member_row div.member_pw:hover{
+    border-color: rgb(var(--origin-yellow));
+    box-shadow: 0 0 10px rgba(var(--real-black),0.05);
+}
+.member_pw input{
+    width: 100%!important;
+    padding: 0!important;
+    border: none!important;
+}
+.member_pw input:hover{
+    box-shadow: none;
+}
+.member_pw button{
+    display: block;
+    min-width: 30px;
+    width: 30px;
+}
+.member_pw button img{
+    display: block;
+    width: 100%;
+    height: auto;
+    background-size: contain;
+}
+/*주소*/
+.member_address{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.address_row{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+button.row_btn{
+    min-width: 120px;
+    width: 120px;
+    max-width: 120px;
+    height: 40px;
+    color: rgb(var(--deep2-yellow));
+    background-color: rgb(var(--lite-yellow));
+    border-radius: 5px;
+    margin-left: 5px;
+}
+button.row_btn:hover{
+    font-weight: bold;
+    background-color: rgb(var(--origin-yellow));
+}
+.address_row + input,
+.member_address input + input{
+    margin-top: 5px;
+}
+/*전화번호*/
+.tel_row input{
+    max-width: 140px;
+}
+.tel_row p{
+    margin: 0 10px;
+}
+/*input number 화살표 없애기*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox  */
+input[type='number'] {
+  -moz-appearance: textfield;
+}

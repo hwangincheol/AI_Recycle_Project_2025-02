@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layout}"
+      layout:fragment="content">
+    <div class="member_whole">
+        <div class="member_title">
+            <h1>아이디 / 비밀번호 찾기</h1>
+            <p>
+                아이디 혹은 비밀번호를 잊어버리셨나요?
+                <br/>
+                아래 정보를 입력하여 정보를 찾아주세요.
+            </p>
+        </div>
+        <div class="member_inner">
+            <div class="find_tab display_flex flex_center flex_align_c">
+                <a href="/find?type=id" class="find_link find_link1">아이디 찾기</a>
+                <a href="/find?type=pw" class="find_link find_link2">비밀번호 찾기</a>
+            </div>
+            <div class="find_member">
+                <div class="member_row find_pw">
+                    <p>아이디</p>
+                    <input type="text" id="id" name="id" maxlength="15" placeholder="아이디 입력(5~15자 이내)">
+                </div>
+                <div class="member_row">
+                    <p>이름</p>
+                    <input type="text" id="name" name="name" maxlength="10" placeholder="이름 입력">
+                </div>
+                <div class="member_row">
+                    <p>전화번호</p>
+                    <div class="tel_row display_flex flex_align_c">
+                        <input type="text" id="tel1" onkeyup="telWrite()" maxlength="3" placeholder="전화번호 앞자리"
+                               oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        <p>-</p>
+                        <input type="text" id="tel2" onkeyup="telWrite()" maxlength="4" placeholder="전화번호 중간자리"
+                               oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        <p>-</p>
+                        <input type="text" id="tel3" onkeyup="telWrite()" maxlength="4" placeholder="전화번호 뒷자리"
+                               oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    </div>
+                    <input type="hidden" id="tel_whole" name="tel" value="">
+                    <span id="telchk1" class="telchk"><span><img src="/img/icon/member/id_no.png">전화번호를 모두 입력해주세요.</span></span>
+                    <span id="telchk2" class="telchk"><span><img src="/img/icon/member/id_no.png">전화번호 앞자리를 입력해주세요.</span></span>
+                    <span id="telchk3" class="telchk"><span><img src="/img/icon/member/id_no.png">전화번호 중간자리를 입력해주세요.</span></span>
+                    <span id="telchk4" class="telchk"><span><img src="/img/icon/member/id_no.png">전화번호를 뒷자리를 입력해주세요.</span></span>
+                    <span id="telchk5" class="telchk"><span><img src="/img/icon/member/id_no.png">전화번호를 다시 한 번 확인해주세요.</span></span>
+                </div>
+                <div class="btn_flex">
+                    <button type="button" class="btn_prev" onclick="goBack()">뒤로</button>
+                    <button type="button" class="btn_submit" onclick="memFindChk()">정보 찾기</button>
+                </div>
+            </div>
+            <!-- 비밀번호 재등록 -->
+            <div class="pw_change_whole"></div>
+        </div>
+    </div>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:fragment="head">
+  <head>
+    <meta charset="UTF-8">
+    <title th:text="${pageTitle}">타이틀</title>
+    <link rel="shortcut icon" href="/img/icon/common/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+    <th:block layout:fragment="css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+      <link rel="stylesheet" href="/css/common/reset.css">
+      <link rel="stylesheet" href="/css/common/common.css">
+      <link rel="stylesheet" href="/css/common/header.css">
+      <link rel="stylesheet" href="/css/common/footer.css">
+      <link rel="stylesheet" href="/css/common/popup.css">
+      <!-- 각 페이지의 css -->
+      <link rel="stylesheet" th:if="${cssPath != null}" th:href="@{'/css/'+${cssPath}+'.css'}" />
+    </th:block>
+    <th:block layout:fragment="javascript">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/js/common/common.js"></script>
+      <script src="/js/common/header.js"></script>
+      <script src="/js/common/popup.js"></script>
+      <script th:if="${jsPath != null}" th:src="@{'/js/'+${jsPath}+'.js'}"></script>
+    </th:block>
+  </head>
+</html>
