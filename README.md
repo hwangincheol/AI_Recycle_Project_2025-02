@@ -6,7 +6,7 @@
 
 ## ㅁ 프로젝트 개요
 ![슬라이드2](https://github.com/user-attachments/assets/ee52b0d7-a0c2-4f6d-92b8-d7090f8aca67)
-![슬라이드3](https://github.com/user-attachments/assets/8098f030-3028-47d2-9b58-9a8d3f9cdfc0)
+![AI프로젝트_1석3조 (1)](https://github.com/user-attachments/assets/a473a3a5-8d0e-46f4-8cc7-fe91c069b1ee)
 ![슬라이드5](https://github.com/user-attachments/assets/d5bbb24c-16c4-4f64-b02e-596fd4cd67df)
 <br>
 
