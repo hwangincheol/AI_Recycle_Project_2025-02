@@ -1,5 +1,5 @@
-# AI_Recycle_Project_2025-02 (팀 프로젝트)
-가전제품 폐기물 수거 웹 사이트 제작
+# AI 가전제품 폐기물 수거 웹 사이트 제작 (팀 프로젝트)
+
 
 ![슬라이드1](https://github.com/user-attachments/assets/59d4cc4e-0ca0-4534-b923-623176057578)
 <br>
