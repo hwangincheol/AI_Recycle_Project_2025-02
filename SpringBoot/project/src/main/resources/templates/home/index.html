@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layout}"
+      layout:fragment="content">
+    <div class="index_whole">
+        <div class="index_top">
+            <img src="/img/icon/home/index_bg.jpg">
+            <div class="index_bg"></div>
+            <div class="index_title">
+                <p>아직도 수거 스티커 떼서 버리시나요?</p>
+                <div class="title_flex display_flex flex_center flex_align_c">
+                    <p>이제</p>
+                    <div class="display_flex flex_center flex_align_c">
+                        <span></span>
+                        <h1>RecyclePic</h1>
+                        <span></span>
+                    </div>
+                    <p>으로</p>
+                </div>
+                <p>편하게 집에서 <span>수거 신청</span>하세요!</p>
+            </div>
+        </div>
+        <div class="index_common index_pic">
+            <div class="pic_flex flex_align_c">
+                <div class="pic_box">
+                    <img src="/img/icon/home/index_img2.jpg" alt="가전제품 이미지 - 토스트기">
+                    <img src="/img/icon/home/index_img1.jpg" alt="가전제품 이미지 - 믹서기">
+                </div>
+                <p>
+                    무거운 가전제품, 대량으로 버려야 하는 가전제품.
+                    <br/>
+                    제품 무게와 종류를 체크, 수거 스티커를 떼서 붙여 밖으로 나가신 경험, 있으시죠?
+                    <br/>
+                    <br/>
+                    이제는 RecyclePic과 함께 집에서 사진을 찍어 간편하게 수거 신청만 하세요!
+                    <br/>
+                    RecyclePic이 정해진 날짜에 수거를 하러 집에 방문합니다.
+                </p>
+            </div>
+            <div class="pic_btn display_flex flex_align_c">
+                <a href="/price" class="pic_money">수거 비용확인<span></span></a>
+                <a href="/collect" class="pic_register">수거 신청하기<span></span></a>
+            </div>
+        </div>
+        <div class="info_whole">
+            <div class="index_common">
+                <p class="index_subtitle">RecyclePic이란?<span></span></p>
+                <p>
+                    <b>Recycle + Picture의 합성어</b>로, 사진을 찍어 폐기물을 버린다는 의미를 가지고 있습니다.
+                </p>
+                <p>
+                    RecyclePic은
+                    <br/>
+                    가전제품 폐기물을 사진, 영상으로 찍어서 업로드하여 이용자가 쉽게 폐기물을 버릴 수 있도록 돕습니다.
+                    <br/>
+                    집에서 쉽게 신청 및 수거까지, 합리적인 가격으로 만나보세요!
+                </p>
+            </div>
+        </div>
+        <div class="index_common board_whole">
+            <div class="index_board_title display_flex flex_start flex_align_c">
+                <p class="index_subtitle">공지사항<span></span></p>
+                <a href="/board/list">더보기</a>
+            </div>
+            <div class="board_inner">
+                <table class="board_table">
+                    <thead class="board_title">
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="board : ${boardEntityList}" th:onclick="'goBoardDetail('+${board.id}+')'">
+                            <td><span></span><p th:text="${board.id}"></p></td>
+                            <td><a th:text="${board.title}" target="_blank"></a></td>
+                            <td th:text="${#temporals.format(board.regTime, 'yyyy-MM-dd')}"></td>
+                        </tr>
+                        <tr th:if="${boardEntityList == null} or ${boardEntityList.size() == 0}">
+                            <td colspan="3">
+                                <p class="no_data_txt">등록된 공지사항이 없습니다.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</html>

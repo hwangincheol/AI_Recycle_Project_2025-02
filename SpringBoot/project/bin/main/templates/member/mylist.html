@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{common/layout}"
+      layout:fragment="content">
+    <div class="mypage_whole">
+        <div class="mypage_title">
+            <h1>마이페이지</h1>
+            <p><span th:text="${#authentication.name}"></span>님, 어서 오세요.</p>
+        </div>
+        <div class="mypage_box">
+            <div class="mypage_list">
+                <a href="javascript:void(0)" th:if="${#authentication.name} != 'admin'" onclick="mypagePwShow()" class="mypage_row mypage_row1">
+                    <div class="display_flex flex_between flex_align_c">
+                        <div class="display_flex flex_align_c">
+                            <span></span>
+                            <p>정보 수정</p>
+                        </div>
+                        <img src="/img/icon/common/arrow_next.png">
+                    </div>
+                </a>
+                <a href="/mypage" th:if="${#authentication.name} == 'admin'" class="mypage_row mypage_row1">
+                    <div class="display_flex flex_between flex_align_c">
+                        <div class="display_flex flex_align_c">
+                            <span></span>
+                            <p>정보 수정</p>
+                        </div>
+                        <img src="/img/icon/common/arrow_next.png">
+                    </div>
+                </a>
+                <!--일반유저-->
+                <a href="/orderList" class="mypage_row mypage_row2" sec:authorize="hasAuthority('USER')">
+                    <div class="display_flex flex_between flex_align_c">
+                        <div class="display_flex flex_align_c">
+                            <span></span>
+                            <p>수거 신청 내역</p>
+                        </div>
+                        <img src="/img/icon/common/arrow_next.png">
+                    </div>
+                </a>
+                <!--관리자-->
+                <a href="/admin/orderAdmin" class="mypage_row mypage_row2" sec:authorize="hasAuthority('ADMIN')">
+                    <div class="display_flex flex_between flex_align_c">
+                        <div class="display_flex flex_align_c">
+                            <span></span>
+                            <p>수거 신청 내역 관리</p>
+                        </div>
+                        <img src="/img/icon/common/arrow_next.png">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--비밀번호 확인 팝업-->
+        <div class="pwchkpop_whole">
+            <div class="pwchkpop_bg"></div>
+            <div class="pwchkpop_box">
+                <div class="pwchkpop_title">
+                    <div>
+                        <p class="pwchkpop_title_txt"><span th:text="${#authentication.name}"></span> 님</p>
+                    </div>
+                    <p class="pwchkpop_title_subtxt">안전한 정보수정을 위해<br/>비밀번호를 입력해주세요.</p>
+                </div>
+                <div class="pwchkpop_pw display_flex">
+                    <input type="password" id="pw" onkeyup="pwChkKeyup(event)" maxlength="16" placeholder="비밀번호">
+                    <button type="button" data-id="pw" onclick="pwTxtPw(this)">
+                        <img src="/img/icon/common/eye_open.png" alt="비밀번호 숨기기/보여주기 버튼">
+                    </button>
+                </div>
+                <div class="btn_flex">
+                    <button type="button" class="btn_prev" onclick="mypagePwHide()">닫기</button>
+                    <button type="button" class="btn_submit" onclick="mypageGo()">입력 완료</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

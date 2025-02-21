@@ -1,0 +1,197 @@
+@charset "UTF-8";
+/*멤버 카테고리 공통*/
+.mypage_whole{
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+}
+.mypage_whole *{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgb(var(--lite-black));
+    font-style: normal;
+    text-decoration: none;
+    outline: 0;
+    word-break: auto-phrase;
+    background-color: var(--bg-none);
+}
+/*마이페이지 제목*/
+.mypage_title{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.mypage_title p{
+    margin: 5px auto 20px auto;
+}
+.mypage_title p span{
+    font-weight: 500;
+    color: rgba(var(--lite-black), 0.8);
+    margin-right: 2px;
+}
+/*마이페이지 링크*/
+.mypage_box{
+    width: 100%;
+    height: auto;
+    border: 1px solid rgb(var(--lite-gray));
+    border-radius: 10px;
+    padding: 20px;
+}
+.mypage_list{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.mypage_row{
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    background-color: rgba(var(--origin-yellow), 0.1);
+    border: 1px solid var(--bg-none);
+    border-radius: 5px;
+}
+.mypage_row:hover{
+    background-color: rgba(var(--origin-yellow), 0.2);
+    border-color: rgb(var(--origin-yellow));
+    box-shadow: 0 0 10px rgba(var(--real-black),0.05);
+}
+.mypage_row + .mypage_row{
+    margin-top: 10px;
+}
+.mypage_row .display_flex{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.mypage_row span{
+    display: block;
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    margin-right: 10px;
+}
+.mypage_row.mypage_row1 span{
+    background: url('/img/icon/member/people_gr.png') no-repeat;
+    background-size: contain;
+}
+.mypage_row.mypage_row1:hover span{
+    background: url('/img/icon/member/people_yl.png') no-repeat;
+    background-size: contain;
+}
+.mypage_row.mypage_row2 span{
+    background: url('/img/icon/member/list_gr.png') no-repeat;
+    background-size: contain;
+}
+.mypage_row.mypage_row2:hover span{
+    background: url('/img/icon/member/list_yl.png') no-repeat;
+    background-size: contain;
+}
+.mypage_row img{
+    display: inline-block;
+    min-width: 30px;
+    width: 30px;
+    margin-right: -10px;
+}
+
+/*비밀번호 확인 팝업*/
+.pwchkpop_whole{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: none;
+}
+.pwchkpop_bg{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #00000080;
+}
+.pwchkpop_box{
+    position: absolute;
+    width: calc(100% - 100px);
+    max-width: 500px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+.pwchkpop_title{
+    width: calc(100% + 40px);
+    height: auto;
+    margin: -20px -20px 0 -20px;
+}
+.pwchkpop_title div{
+    width: 100%;
+    height: auto;
+    background-color: #cd9d16;
+    padding: 10px;
+}
+.pwchkpop_title p{
+    text-align: center;
+}
+p.pwchkpop_title_txt{
+    color: rgb(var(--real-white));
+}
+p.pwchkpop_title_txt span{
+    font-weight: bold;
+    color: rgb(var(--real-white));
+}
+p.pwchkpop_title_subtxt{
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 500;
+    color: rgb(var(--lite-black));
+    margin: 30px auto 20px auto;
+}
+/*비밀번호*/
+.pwchkpop_pw{
+    position: relative;
+    width: 100%;
+    height: auto;
+    line-height: 30px;
+    padding: 4px 10px;
+    border: 1px solid rgb(var(--lite-gray));
+    border-radius: 5px;
+    background-color: rgb(var(--real-white));
+    margin-bottom: 20px;
+}
+.pwchkpop_pw:hover{
+    border-color: rgb(var(--origin-yellow));
+    box-shadow: 0 0 10px rgba(var(--real-black),0.05);
+}
+.pwchkpop_pw input{
+    width: 100%!important;
+    padding: 0!important;
+    border: none!important;
+}
+.pwchkpop_pw input:hover{
+    box-shadow: none;
+}
+.pwchkpop_pw button{
+    display: block;
+    min-width: 30px;
+    width: 30px;
+}
+.pwchkpop_pw button img{
+    display: block;
+    width: 100%;
+    height: auto;
+    background-size: contain;
+}

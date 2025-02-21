@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:fragment="popup">
+  <input type="text" id="common_pop_input" onkeyup="enterClick(event)">
+  <div class="common_pop alert_whole">
+    <div class="common_bg"></div>
+    <div class="common_box">
+      <p id="alert_title" class="common_pop_txt common_pop_title">제목</p>
+      <p id="alert_subtitle" class="common_pop_txt common_pop_subtitle">기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트</p>
+      <div class="common_flex">
+        <button type="button" onclick="commonHide()" class="common_btn btn_confirm">확인</button>
+      </div>
+    </div>
+  </div>
+  <div class="common_pop confirm_whole">
+    <div class="common_bg"></div>
+    <div class="common_box">
+      <p id="confirm_title" class="common_pop_txt common_pop_title">제목</p>
+      <p id="confirm_subtitle" class="common_pop_txt common_pop_subtitle">기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트</p>
+      <div class="common_flex">
+        <button type="button" onclick="commonHide()" class="common_btn btn_hide">닫기</button>
+        <button type="button" onclick="popConfirm(this)" class="common_btn btn_confirm" id="pop_confirm_btn">확인</button>
+      </div>
+    </div>
+  </div>
+  <div class="common_pop standby_whole">
+    <div class="common_bg"></div>
+    <div class="common_box">
+      <p id="standby_title" class="common_pop_txt common_pop_title">제목</p>
+      <p id="standby_subtitle" class="common_pop_txt common_pop_subtitle">기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트 기본텍스트</p>
+      <div class="standby_loader"></div>
+    </div>
+  </div>
+  <input type="hidden" id="confirm_message" value="none">
+</html>

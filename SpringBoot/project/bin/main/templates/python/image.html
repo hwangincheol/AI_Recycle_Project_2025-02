@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layout}"
+      layout:fragment="content">
+<div class="collect_whole">
+  <p class="bold_title">수거 페이지</p>
+  <div>
+    <div>
+      <h1>이미지 결과 출력화면</h1>
+      <form method="post" enctype="multipart/form-data" id="fileUploadForm">
+        <div>
+          <p>이미지 파일</p>
+          <input type="file" id="data_file" name="file" accept="image/*,video/*"/>
+        </div>
+        <input type="button" value="파일 업로드"/>
+      </form>
+      <!--여기에 요청 결과가 출력되어야 합니다.-->
+      <div id="result_json"></div>
+    </div>
+  </div>
+</div>
+</html>
+<!--수정1 끝-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+  var button = document.querySelector("input[type=button]");
+
+  button.addEventListener("click", function(){
+      var form = document.getElementById("fileUploadForm");
+      var form_data = new FormData(form);
+      button.disabled = true;
+      console.log([...form_data]);
+
+<!--   시작  -->
+// 파일 형식 및 크기 확인
+      var fileInput = document.getElementById("data_file");
+      var file = fileInput.files[0];
+      alert(fileInput);
+      alert(file);
+
+      if (!file) {
+          alert("파일을 선택해 주세요.");
+          button.disabled = false;
+          return;
+      }
+
+      // 파일 형식 확인
+      var validTypes = ["image/jpeg", "image/png", "image/gif", "video/mp4", "video/x-msvideo"];
+      if (!validTypes.includes(file.type)) {
+          alert("유효하지 않은 파일 형식입니다. JPEG, PNG, GIF, MP4, AVI 파일만 업로드 가능합니다.");
+          button.disabled = false;
+          return;
+      }
+
+      // 파일 크기 확인
+      var maxSize = 20 * 1024 * 1024; // 20MB
+      if (file.size > maxSize) {
+          alert("파일 크기가 20MB를 초과할 수 없습니다.");
+          button.disabled = false;
+          return;
+      }
+<!--끝-->
+      var xhr = new XMLHttpRequest();
+      var csrfToken = document.querySelector('meta[name="_csrf"]').content;
+      var csrfHeader = document.querySelector('meta[name="_csrf_header"]').content;
+
+<!--      xhr.open("POST", "http://localhost:8080/video_service", true);// 비디오 자바서버-->
+      xhr.open("POST", "http://localhost:8080/image_service", true);// 이미지 자바서버
+      xhr.setRequestHeader(csrfHeader, csrfToken); // CSRF 토큰 설정
+      xhr.onload = function(){
+          if(xhr.status >=200 && xhr.status < 300){
+              console.log(xhr.responseText);
+              try{
+                      // dict인 result_json div에 출력
+                      var response = JSON.parse(xhr.responseText); //응답 json형태반환
+                      var resultJsonDiv = document.getElementById("result_json");
+                      resultJsonDiv.innerHTML = "<pre>" + JSON.stringify(response.json_data, null, 2) + "</pre>"; // predictions을 문자열로 변환하여 출력
+
+                      button.disabled = false; //버튼활성화
+                      alert("이미지전달");
+
+                  }catch(e){
+                      console.error("json 파싱오류 : "+e.message);
+                      alert("응답데이터 처리중 오류가 발생");
+                      button.disabled = false; //버튼활성화
+                  }
+          }else {
+              console.error("ERROR : " + xhr.statusText);
+              try {
+                  var errorResponse = JSON.parse(xhr.responseText);
+                  alert("Error: " + errorResponse.message); // 서버에서 반환한 오류 메시지
+              } catch (e) {
+                  alert("fail : " + xhr.statusText);
+              }
+              button.disabled = false;
+          }
+
+      }//end xhr.onload
+
+      xhr.onerror = function(){
+          console.error("ERROR : "+xhr.statusText);
+          alert("fail : "+xhr.statusText);
+          button.disabled = false;
+      }//end xhr.onerror
+
+      xhr.send(form_data);
+  })//end button click
+</script>
+
+</html>

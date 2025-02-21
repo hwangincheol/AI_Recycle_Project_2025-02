@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:fragment="header" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<meta charset="UTF-8">
+<header class="header_section">
+  <div class="w_display_flex flex_end flex_align_e">
+    <div class="header_top">
+      <div class="display_flex flex_between flex_align_c">
+        <button type="button" onclick="goHome()" class="header_logo">
+          <img src="/img/logo/logo_dk.svg" alt="RecyclePic logo">
+          <p>RecyclePic</p>
+        </button>
+        <button type="button" onclick="goMenu()" class="header_hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+    <aside class="header_side">
+      <div class="display_flex flex_start flex_align_c">
+        <!--로그인 전(로그인 구현 후 수정)-->
+        <a href="/login" id="header_login" sec:authorize="isAnonymous()"><span></span>로그인</a>
+        <a href="/signup" id="header_signup" sec:authorize="isAnonymous()"><span></span>회원가입</a>
+        <a href="/mypage/list" sec:authorize="isAuthenticated()"><span id="header_mypage" th:text="${#authentication.name}"></span>님</a>
+        <a href="/logout" sec:authorize="isAuthenticated()"><span id="header_logout"></span>로그아웃</a>
+      </div>
+      <nav class="header_a">
+        <!-- 추후 로그인 해야만 보이게 하고 싶은 곳에 sec:authorize="isAuthenticated()" 추가 -->
+        <a href="/collect" id="header_recycle" class="header_link">수거<span></span></a>
+        <a href="/board/list" id="header_community" class="header_link">공지사항<span></span></a>
+      </nav>
+    </aside>
+  </div>
+</header>
+</html>

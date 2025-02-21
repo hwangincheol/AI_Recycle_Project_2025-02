@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/*제목*/
+.price_title{
+    width: 100%;
+    height: auto;
+    margin: 0 auto 40px auto;
+}
+.price_title *{
+    text-align: center;
+}
+.price_title img{
+    display: block;
+    min-width: 120px;
+    width: 120px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.price_title h1{
+    color: rgb(var(--deep2-yellow));
+}
+.price_title a{
+    display: block;
+    min-width: 120px;
+    width: 120px;
+    height: 40px;
+    color: rgb(var(--lite-black));
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid var(--bg-none);
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: rgba(var(--lite-yellow),0.5);
+    text-decoration: none;
+}
+.price_title a:hover{
+    background-color: rgb(var(--lite-yellow));
+}
+/*테이블*/
+table.price_table{
+    max-width: 800px;
+}
+table.price_table th:nth-child(2),
+table.price_table td:nth-child(2){
+    border-left: 1px solid rgb(var(--lite-gray));
+    border-right: 1px solid rgb(var(--lite-gray));
+}
+table.price_table tbody tr:nth-child(2n){
+    background-color: rgba(var(--lite-gray),0.1);
+}
+table.price_table th:nth-child(1),
+table.price_table td:nth-child(1){
+    border-left: 1px solid rgb(var(--lite-gray));
+}
+table.price_table th:nth-child(1){
+    border-right: 1px solid rgb(var(--lite-gray));
+}
+table.price_table th:nth-child(3),
+table.price_table td:nth-child(3){
+    border-right: 1px solid rgb(var(--lite-gray));
+}
+.main_inner table thead th{
+    background-color: rgba(var(--lite-yellow),0.3);
+    border-top: 1px solid rgb(var(--lite-gray));
+    border-bottom: 1px solid rgb(var(--lite-gray));
+}
+.main_inner table thead tr:nth-child(2) th{
+    background-color: rgba(var(--lite-yellow),0.1);
+}
+.main_inner table td{
+    color: rgb(var(--lite-black));
+}

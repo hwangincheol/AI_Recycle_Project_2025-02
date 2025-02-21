@@ -1,0 +1,10 @@
+.env
+.venv
+video/
+#예측모델만 복사
+model/
+!model/pt/
+
+
+
+
