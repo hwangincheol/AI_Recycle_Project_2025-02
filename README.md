@@ -1,4 +1,5 @@
-# ✨ Recycle_Project
+# 전자제품 수거
+✨ Recycle_Project
 RecyclePic  - 사진을 찍어 수거를 돕는 웹 프로젝트
 <br/>
 MBC 아카데미 Spring Boot & Python & AI 연계 팀 프로젝트 with 김정현, 윤인영, 이혜린, 황인철
