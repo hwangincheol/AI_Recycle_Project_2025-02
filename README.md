@@ -230,8 +230,12 @@ Security를 활용한 로그인, 이용 가능 사이트 제한.
 각 유저들의 수거 신청 내역을 보고 취소, 수거, 완료 진행 상태를 수정할 수 있음.
 <br/>
 <br/>
-![18](https://github.com/user-attachments/assets/8a2a4cbd-4d41-45c7-a697-e2e96e1ebc85)
-![19](https://github.com/user-attachments/assets/c5c33519-7692-43b2-8bd7-a86da56efb66)
+![슬라이드48](https://github.com/user-attachments/assets/4acc01b4-49f3-40b5-950e-890b8039539f)
+![슬라이드49](https://github.com/user-attachments/assets/b464d7d2-9cce-4826-ab2a-3b6ea3e23675)
+![슬라이드50](https://github.com/user-attachments/assets/ef9cd971-7be1-46ac-a26c-b405cea92a4a)
+![슬라이드51](https://github.com/user-attachments/assets/eafb8248-ed0c-4ac4-9da2-e888bacfff36)
+![슬라이드52](https://github.com/user-attachments/assets/f381e43a-ba25-4a9d-9162-97a67da3cad0)
+![슬라이드53](https://github.com/user-attachments/assets/0ef02558-4925-470f-b08c-25446ea2fad2)
 <br/>
 <br/>
 <br/>
