@@ -7,9 +7,6 @@ MBC 아카데미 Spring Boot & Python & AI 연계 팀 프로젝트 with 김정�
 🗣 pdf : [AI프로젝트_1석3조.pdf](https://github.com/user-attachments/files/18953597/AI._1.3.pdf)
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
 ## 👀 프로젝트 소개
 📝 목표
 
