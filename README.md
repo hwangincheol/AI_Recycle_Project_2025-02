@@ -4,7 +4,7 @@ RecyclePic  - 사진을 찍어 수거를 돕는 웹 프로젝트
 MBC 아카데미 Spring Boot & Python & AI 연계 팀 프로젝트 with 김정현, 윤인영, 이혜린, 황인철
 <br/>
 <br/>
-🗣 pdf : [AI프로젝트_1석3조.pdf](https://github.com/user-attachments/files/18953597/AI._1.3.pdf)
+🗣 PPT(pdf) : [AI프로젝트_1석3조.pdf](https://github.com/user-attachments/files/18953597/AI._1.3.pdf)
 <br/>
 <br/>
 ## 👀 프로젝트 소개
